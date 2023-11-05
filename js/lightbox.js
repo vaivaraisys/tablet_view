@@ -1,15 +1,18 @@
-function openLightbox(imageSrc, description) {
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightbox-image");
-    const lightboxDescription = document.getElementById("lightbox-description");
+var modal = document.getElementById("myModal");
+var img = document.getElementById("myImage");
+var modalImg = document.getElementById("modalImage");
+var closeBtn = document.getElementById("closeBtn");
+
+img.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+}
+
+modal.onclick = function () {
+    modal.style.display = "none";
+}
   
-    lightboxImage.src = imageSrc;
-    lightboxImage.alt = description;
-    lightboxDescription.textContent = description;
-    lightbox.classList.remove("hidden");
-  }
-  
-  function closeLightbox() {
-    const lightbox = document.getElementById("lightbox");
-    lightbox.classList.add("hidden");
-  }
